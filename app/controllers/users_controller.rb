@@ -35,4 +35,19 @@ class UsersController < ApplicationController
 
     redirect_to("/users/"+ the_user.username)
   end
+
+  def create
+
+    input_user = params.fetch("query_new_user")
+
+    a_new_user = User.new
+    a_new_user.username = input_user
+ 
+
+    a_new_user.save
+
+    redirect_to("/users/"+ a_new_user.username)
+    # render({:template => "photo_templates/create"})
+  end
+
 end
