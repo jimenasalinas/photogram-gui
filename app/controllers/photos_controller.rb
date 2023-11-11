@@ -16,4 +16,7 @@ class PhotosController < ApplicationController
        render({:template => "photo_templates/show"}) 
     end
 
+    def baii
+        render({:template => "photo_templates/baii"})
+    end
 end
