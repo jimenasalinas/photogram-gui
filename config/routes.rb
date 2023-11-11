@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get("/users/:path_username", {:controller => "users", :action => "show"})
 
+  post("/update_user/:modify_username", {:controller => "users", :action => "update"})
+
   get("/photos", {:controller => "photos", :action => "index"})
 
   get("/photos/:path_id", {:controller => "photos", :action => "show"})

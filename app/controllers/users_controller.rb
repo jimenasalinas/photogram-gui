@@ -19,4 +19,20 @@ class UsersController < ApplicationController
   render({:template => "user_templates/show"})
   # end
   end
+
+  def update
+
+    the_id = params.fetch("modify_username")
+    matching_users = User.where({:username => the_id })
+    
+    the_user = matching_users.at(0)
+
+    input_user = params.fetch("query_user")
+
+    the_user.username = input_user
+
+    the_user.save
+
+    redirect_to("/users/"+ the_user.username)
+  end
 end
